@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159265
+//we are assuming the angle btw the 2 racers is 90 degree wrt centre
+int main()
+{
+    double b, d, t, val, ret, q, r;
+    printf("Enter distance between the racers : ");
+    scanf("%lf", &d);
+    if (d < 0)
+    {
+        printf("wrong input : ");
+    }
+    else
+    {
+        printf("Enter the angle made by the racers with the centre: ");
+        scanf("%lf", &t);
+        if (t <= 0)
+        {
+            printf("Enter angle greater than 0°");
+        }
+        else
+        {
+            val = PI / 180.0;
+            ret = cos(t * val);
+            q = (d * d) / (1 - ret);
+            r = sqrt(q) / 1.41421356;
+            b = (3 * 2 * PI * r);
+            printf("distance covered in three lap is %lf ", b);
+        }
+    }
+    return 0;
+}
